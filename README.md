@@ -6,7 +6,7 @@
 
 <br>
 
-# Cap 3 - Implementando algoritmos de Machine Learning com Scikit-learn
+# Classificação de Grãos de Trigo com Machine Learning
 
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/joseandrefilho">Jose Andre Filho</a>
@@ -17,7 +17,6 @@
 ### Coordenador
 - <a href="https://www.linkedin.com/in/profandregodoi/">André Godoi Chiovato</a>
 
-# Classificação de Grãos de Trigo com Machine Learning
 
 ## Introdução
 
