@@ -49,9 +49,19 @@ O objetivo deste projeto é aplicar diferentes algoritmos de classificação par
 ### 2. Implementação e Comparação dos Modelos de Classificação
 
 - Os dados foram divididos em conjuntos de treinamento (70%) e teste (30%).
-- Foram utilizados três algoritmos de classificação: **K-Nearest Neighbors (KNN)**, **Support Vector Machine (SVM)** e **Random Forest**.
+- Foram utilizados três algoritmos de classificação: **K-Nearest Neighbors (KNN)**, **Support Vector Machine (SVM)** e **Random Forest**. Esses modelos foram escolhidos por suas características complementares:
+  - **K-Nearest Neighbors (KNN)**: O KNN é um algoritmo simples e intuitivo, que classifica os pontos de acordo com seus vizinhos mais próximos. Ele é frequentemente utilizado como baseline para verificar o desempenho inicial dos modelos, pois é fácil de entender e implementar. O KNN é particularmente útil para detectar padrões locais nos dados, mas pode ser sensível a outliers e a escalas diferentes dos atributos, sendo necessário o pré-processamento dos dados (como normalização).
+  - **Support Vector Machine (SVM)**: O SVM é um algoritmo poderoso para problemas de classificação e é eficaz quando há uma clara separação entre as classes. Ele funciona muito bem em conjuntos de dados de alta dimensionalidade e utiliza um hiperplano para maximizar a margem entre as diferentes classes, garantindo uma boa generalização dos resultados. O SVM é adequado para lidar com conjuntos de dados que apresentam margens de separação complexas e pode ser ajustado para lidar com casos onde os atributos não são linearmente separáveis.
+  - **Random Forest**: O Random Forest é um algoritmo de ensemble que combina diversas árvores de decisão, sendo robusto e menos suscetível a overfitting em comparação com modelos individuais de árvores. Ele cria várias árvores de decisão em subconjuntos dos dados e tira uma média dos resultados, o que melhora a robustez e a precisão do modelo. Além disso, o Random Forest fornece estimativas da importância dos atributos, o que ajuda a entender quais características dos grãos mais influenciam na classificação, sendo muito útil para insights sobre os dados.
+
 - Cada modelo foi treinado e avaliado com base em métricas de desempenho como acurácia, precisão, recall, F1-score e matrizes de confusão.
 - Foi realizada uma comparação dos desempenhos dos diferentes algoritmos.
+
+##### Por que não escolhemos Naive Bayes e Regressão Logística?
+
+- **Naive Bayes**: O Naive Bayes é um algoritmo eficiente e rápido, especialmente para problemas de classificação de texto e dados categóricos. No entanto, ele assume independência entre os atributos, o que nem sempre é verdade no caso dos atributos físicos dos grãos de trigo, como área, perímetro e compacidade. Esses atributos são correlacionados, o que pode prejudicar a precisão do modelo. Portanto, preferimos algoritmos que conseguem lidar melhor com correlações entre os atributos, como o Random Forest.
+
+- **Logistic Regression**: A Regressão Logística é um método linear que funciona bem quando há uma clara separação linear entre as classes. No entanto, os dados dos grãos podem ter relações mais complexas, que não são facilmente capturadas por um modelo linear. Modelos como o SVM e o Random Forest conseguem capturar essas relações complexas de forma mais eficaz, garantindo uma melhor separação entre as classes.
 
 ### 3. Otimização dos Modelos
 
